@@ -2,24 +2,20 @@ package WS1.Observables;
 
 import WS1.Observers.Observer;
 
-public class Nimbus1PressureSensor implements Observable{
+import java.util.Random;
 
+public class Nimbus1PressureSensor extends Sensor<Integer> {
+
+    public Random random;
 
     public Nimbus1PressureSensor(String str, int data) {
-
+        super(str, data);
+        random = new Random();
     }
 
-    public int read(){
-
+    public Integer read() {
+        return random.nextInt(1050 - 950) + 950;
     }
 
-    @Override
-    public void notifyObservers(int data) {
 
-    }
-
-    @Override
-    public void addObserver(Observer<T> observer) {
-
-    }
 }

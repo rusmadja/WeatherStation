@@ -1,12 +1,71 @@
 package WS1.Observables;
 
-public class PressureTrendSensor {
+import WS1.Observers.Observer;
+import WS1.Observers.Trend;
 
-    public PressureTrendSensor( ) {
+import java.util.ArrayList;
+import java.util.List;
 
+public class PressureTrendSensor extends Sensor<Trend> implements Observer<Integer>{
+
+    List<Integer> readingList = new ArrayList<>(3);
+
+    public PressureTrendSensor( String str, int data,Nimbus1PressureSensor presssureSensor) {
+        super(str, data);
+        presssureSensor.addObserver(this);
     }
-    public void check(int data){
 
+    @Override
+    public void Update(Integer Data) {
+        super.check();
+    }
+
+    @Override
+    public String getClassName() {
+        return "PressureTrendSensor";
+    }
+
+    @Override
+    public Trend read() {
+       return Trend.GoDown;
+    }
+}
+/*
+int lastCalc;
+    int lastReading1;
+    int lastReading2;
+    int lastReading3;
+    Trend pressureState;
+    Trend LastState;
+
+    public PressureTrendSensor( Nimbus1PressureSensor presssureSensor) {
+        presssureSensor.addObserver(this);
+    }
+
+
+
+
+    public  Trend calcTrend(){
+        if (lastReading1 !=0)
+        {
+            if (lastReading2 > lastReading1 && lastReading3 > lastReading2)
+                return Trend.RISING;
+            else {
+                if (lastReading1 > lastReading2 && lastReading2 >= lastReading3)
+                    return Trend.FALLING;
+            }
+            return Trend.STABLE;
+        }
+        else return null;
+    }
+
+    public void check(int data){
+            lastReading1=lastReading2;
+            lastReading2=lastReading3;
+            lastReading3=data;
+            LastState=calcTrend();
+            if (LastState !=pressureState)
+                notifyObserver(LastState);
 
     }
 
@@ -14,8 +73,12 @@ public class PressureTrendSensor {
 
 
     @Override
-    public void update() {
-
+    public void update(Integer d) {
+        check(d);
     }
 
-}
+    @Override
+    public String getName() {
+        return "PressureTrendSensor ";
+    }
+ */

@@ -1,17 +1,15 @@
 package WS1.Observers;
 
-import WS1.WeatherMonitoringSystem;
+import WS1.Observables.WeatherMonitoringSystem;
 
 public class Log {
     public WeatherMonitoringSystem WMN;
 
-
-
-    public Log(){
+    public Log(WeatherMonitoringSystem ws){
 
     }
 
-    public  void printPresssures(int data){
+    public  void printPressures(int data){
     }
 
     public void printTrendPressures(Trend data){
@@ -20,5 +18,4 @@ public class Log {
 
 
 
-}
 }

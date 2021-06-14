@@ -1,9 +1,5 @@
 package WS1.Observables;
 
-public class AlarmListener {
-
-        public void wakeup();
-
-
-
+public abstract class AlarmListener {
+    public abstract void wakeup();
 }

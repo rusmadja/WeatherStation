@@ -1,15 +1,16 @@
-package WS1;
+package WS1.Observables;
 
-import WS1.Observables.Nimbus1PressureSensor;
-import WS1.Observables.Nimbus1TemepratureSensor;
-import WS1.Observables.PressureTrendSensor;
 
-public class WeatherMonitoringSystem {
+public class WeatherMonitoringSystem  {
     private static WeatherMonitoringSystem instance;
 
-    public Nimbus1TemepratureSensor nimbusTemperator;
+    public Nimbus1TemperatureSensor nimbusTemperator;
     public Nimbus1PressureSensor nimbus1PressureSensor;
     public PressureTrendSensor pressureTrendSensor;
+
+    public static WeatherMonitoringSystem theInstance() {
+        return null;
+    }
 
 
     public void addPressureObserver(){
@@ -20,9 +21,6 @@ public class WeatherMonitoringSystem {
 
     public  void addTemperatureObserver(){
     }
-
-
-
 
     private WeatherMonitoringSystem(){
 

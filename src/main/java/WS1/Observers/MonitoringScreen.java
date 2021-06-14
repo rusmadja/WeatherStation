@@ -1,6 +1,6 @@
 package WS1.Observers;
 
-import WS1.WeatherMonitoringSystem;
+import WS1.Observables.WeatherMonitoringSystem;
 
 public class MonitoringScreen {
 
@@ -12,11 +12,7 @@ public class MonitoringScreen {
 
     }
 
-    public MonitoringScreen(){
-
-    }
-
-
+    public MonitoringScreen(WeatherMonitoringSystem ws){
 
     }
 
