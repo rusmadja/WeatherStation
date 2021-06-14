@@ -2,15 +2,15 @@ package WS1.Observers;
 
 public class LogPressObserver implements Observer<Integer>{
 
-    public Log itsLog;
+    private Log itsLog;
 
     public LogPressObserver(Log log){
         System.out.println("LogPressObserver was created");
-        itsLog= log;
+        this.itsLog= log;
     }
     @Override
     public void Update(Integer Data) {
-        itsLog.printPressures(Data);
+        itsLog.pressurePrint(Data);
     }
     @Override
     public String getClassName() {

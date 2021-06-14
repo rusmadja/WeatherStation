@@ -1,5 +1,11 @@
 package WS1.Observables;
 
-public class SensorAlarmListener{
-    public void wakeup() { }
+public class SensorAlarmListener extends AlarmListener{
+    private Sensor sensor;
+
+    public SensorAlarmListener(Sensor sensor) {
+        this.sensor = sensor;
+    }
+
+    public void wakeup() { sensor.check();}
 }

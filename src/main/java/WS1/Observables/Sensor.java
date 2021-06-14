@@ -1,21 +1,27 @@
 package WS1.Observables;
 
-import WS1.Observers.Observer;
-
 public abstract class Sensor<T> extends Observable<T> {
-    T lastReading;
-    public Sensor(String str, int data) {
+    private T lastReading ;
+    private int data;
+    private String type;
+
+    public Sensor(String type, int data){
+        this.type = type;
+        this.data = data;
+        System.out.println( this.type + " registered to clock");
     }
+
 
     public abstract T read();
 
-    public abstract void check(int data);
-    /*{
+    public void check(){
         T temp = read();
         if(temp != lastReading){
             lastReading = temp;
             notifyObservers(temp);
         }
-    }*/
+        else
+            lastReading = temp;
+    }
 
 }

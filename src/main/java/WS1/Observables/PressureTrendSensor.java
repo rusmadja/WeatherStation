@@ -12,15 +12,15 @@ public class PressureTrendSensor extends Observable<Trend> implements Observer<I
     private List<Integer> readingList = new ArrayList<>(3);
     Trend pressureState;
     Trend lastState;
-    int lastCalc;
+    //int lastCalc;
 
-    public PressureTrendSensor( String str, int data,Nimbus1PressureSensor presssureSensor) {
-        presssureSensor.addObserver(this);
+    public PressureTrendSensor( Nimbus1PressureSensor pressureSensor) {
+        pressureSensor.addObserver(this);
         for (int i =0 ; i<3 ; i++)
             readingList.set(i,0);
     }
 
-    public  Trend calc(){
+    public Trend calc(){
         if (readingList.get(0) != 0)
         {
             if (readingList.get(0) < readingList.get(1) && readingList.get(1) < readingList.get(2))
