@@ -6,52 +6,27 @@ import WS1.Observers.Trend;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PressureTrendSensor extends Sensor<Trend> implements Observer<Integer>{
+public class PressureTrendSensor extends Observable<Trend> implements Observer<Integer>{
 
-    List<Integer> readingList = new ArrayList<>(3);
+    /*index 0 le plus ancien */
+    private List<Integer> readingList = new ArrayList<>(3);
+    Trend pressureState;
+    Trend lastState;
+    int lastCalc;
 
     public PressureTrendSensor( String str, int data,Nimbus1PressureSensor presssureSensor) {
-        super(str, data);
         presssureSensor.addObserver(this);
+        for (int i =0 ; i<3 ; i++)
+            readingList.set(i,0);
     }
 
-    @Override
-    public void Update(Integer Data) {
-        super.check();
-    }
-
-    @Override
-    public String getClassName() {
-        return "PressureTrendSensor";
-    }
-
-    @Override
-    public Trend read() {
-       return Trend.GoDown;
-    }
-}
-/*
-int lastCalc;
-    int lastReading1;
-    int lastReading2;
-    int lastReading3;
-    Trend pressureState;
-    Trend LastState;
-
-    public PressureTrendSensor( Nimbus1PressureSensor presssureSensor) {
-        presssureSensor.addObserver(this);
-    }
-
-
-
-
-    public  Trend calcTrend(){
-        if (lastReading1 !=0)
+    public  Trend calc(){
+        if (readingList.get(0) != 0)
         {
-            if (lastReading2 > lastReading1 && lastReading3 > lastReading2)
+            if (readingList.get(0) < readingList.get(1) && readingList.get(1) < readingList.get(2))
                 return Trend.RISING;
             else {
-                if (lastReading1 > lastReading2 && lastReading2 >= lastReading3)
+                if (readingList.get(0) > readingList.get(1) && readingList.get(1) > readingList.get(2))
                     return Trend.FALLING;
             }
             return Trend.STABLE;
@@ -59,26 +34,23 @@ int lastCalc;
         else return null;
     }
 
-    public void check(int data){
-            lastReading1=lastReading2;
-            lastReading2=lastReading3;
-            lastReading3=data;
-            LastState=calcTrend();
-            if (LastState !=pressureState)
-                notifyObserver(LastState);
-
-    }
-
-
-
-
-    @Override
-    public void update(Integer d) {
-        check(d);
+    public void check(int data) {
+        readingList.set(0,readingList.get(1));
+        readingList.set(1,readingList.get(2));
+        readingList.set(2, data);
+        lastState=calc();
+        if (lastState !=pressureState)
+            notifyObservers(lastState);
     }
 
     @Override
-    public String getName() {
-        return "PressureTrendSensor ";
+    public void Update(Integer Data) {
+        check(Data);
     }
- */
+
+    @Override
+    public String getClassName() {
+        return "PressureTrendSensor";
+    }
+
+}
