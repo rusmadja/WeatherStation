@@ -11,7 +11,6 @@ public class Nimbus1Clock extends AlarmClock
                 System.out.println("running clock thread ---");
                 for(int i=0;i<60;i++)
                 {
-                    //System.out.println("Thread: " + getName() + " running");
                     tic();
                     try  { Thread.sleep(CLOCK_INTERVAL_MILLIS);}
                     catch (InterruptedException e)

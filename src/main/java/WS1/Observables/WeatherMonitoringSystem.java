@@ -21,6 +21,7 @@ public class WeatherMonitoringSystem {
     private WeatherMonitoringSystem() {
         System.out.println("WeatherMonitoringSystem was created");
         AlarmClock alarmClock = Nimbus1Clock.theInstance();
+
         nimbus1PressureSensor = new Nimbus1PressureSensor("pressure",1100);
         nimbus1TemperatureSensor = new Nimbus1TemperatureSensor("temperature",700);
         pressureTrendSensor = new PressureTrendSensor(nimbus1PressureSensor);
@@ -28,21 +29,14 @@ public class WeatherMonitoringSystem {
 
     public void addPressureObserver(Observer observer) {
         nimbus1PressureSensor.addObserver(observer);
-        System.out.println(obj(observer)+" observes pressure");
-
+        System.out.println(observer.getClassName()+" observes pressure");
     }
     public void addTemperatureObserver(Observer observer) {
         nimbus1TemperatureSensor.addObserver(observer);
-        System.out.println(obj(observer)+" observes temperature");
-
+        System.out.println(observer.getClassName()+" observes temperature");
     }
-
     public void addPressureTrendObserver(Observer observer) {
         pressureTrendSensor.addObserver(observer);
-        System.out.println(obj(observer)+" observes pressure trend");
-    }
-    public String obj(Observer observer){
-        String str=observer.getClass().getSimpleName();
-        return  str;
+        System.out.println(observer.getClassName()+" observes pressure trend");
     }
 }

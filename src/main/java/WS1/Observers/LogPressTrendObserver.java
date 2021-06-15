@@ -1,15 +1,15 @@
 package WS1.Observers;
 
 public class LogPressTrendObserver implements Observer<Trend>{
-    private Log itsLog;
+    private Log log;
     public LogPressTrendObserver(Log aLog){
         System.out.println("LogPressTrendObserver was created");
-        this.itsLog=aLog;
+        this.log =aLog;
     }
 
     @Override
     public void Update(Trend Data) {
-        itsLog.pressureTrendPrint(Data);
+        log.pressureTrendPrint(Data);
     }
 
     @Override

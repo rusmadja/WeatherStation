@@ -20,11 +20,15 @@ public class AlarmClock
     }
 
     protected void tic(){
-        //TODO: fix
+        for (AlarmClockRecord alarm :itsAlarmClockRecords){
+            if(alarm.getIntervalDecrement() % alarm.getInterval() == 0 && alarm.getIntervalDecrement() != 0)
+                alarm.getAlarmListener().WakeUp();
+            alarm.intervalDecrement += CLOCK_INTERVAL_MILLIS;
+        }
     }
 
     public void register(int interval, AlarmListener pal) {
-        //TODO: fix
+        itsAlarmClockRecords.add(new AlarmClockRecord(interval,pal));
     }
 }
 

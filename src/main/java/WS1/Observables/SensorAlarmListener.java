@@ -7,5 +7,5 @@ public class SensorAlarmListener extends AlarmListener{
         this.sensor = sensor;
     }
 
-    public void wakeup() { sensor.check();}
+    public void WakeUp() { sensor.check();}
 }

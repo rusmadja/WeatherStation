@@ -1,8 +1,9 @@
 package WS1.Observables;
 
 public class AlarmClockRecord {
-    int interval;
-    int intervalDecrement;
+
+    private int interval;
+    public int intervalDecrement;
     private AlarmListener alarmListener ;
 
     public AlarmClockRecord(int interval, AlarmListener alarmListener){
@@ -10,18 +11,14 @@ public class AlarmClockRecord {
         this.alarmListener=alarmListener;
         intervalDecrement=0;
     }
-
-    /*public int getIntervalDecrement(){
+    public int getInterval() {
+        return interval;
+    }
+    public int getIntervalDecrement() {
         return intervalDecrement;
     }
-    public AlarmListener getListener(){
+    public AlarmListener getAlarmListener() {
         return alarmListener;
     }
-    public void setIntervalDecrement(int interval){
-        intervalDecrement=interval;
-    }
-    public int getinterval(){
-        return interval;
-    }*/
 }
 
