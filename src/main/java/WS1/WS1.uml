@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>WS1</OriginalElement>
+  <nodes>
+    <node x="-352.5357142857145" y="-109.00000000000006">WS1.Observables.Sensor</node>
+    <node x="551.4642857142856" y="-109.00000000000006">WS1.Observers.LogPressTrendObserver</node>
+    <node x="382.71428571428555" y="47.99999999999994">WS1.Observers.MonitoringScreen</node>
+    <node x="-324.28571428571445" y="204.99999999999994">WS1.Observers.Trend</node>
+    <node x="192.96428571428555" y="-190.00000000000006">WS1.Observers.Observer</node>
+    <node x="-288.28571428571445" y="128.99999999999994">WS1.StudentCode.Nimbus1Clock</node>
+    <node x="-514.2857142857144" y="-28.000000000000057">WS1.Observables.Nimbus1PressureSensor</node>
+    <node x="-99.28571428571445" y="47.99999999999994">WS1.Observables.WeatherMonitoringSystem</node>
+    <node x="-191.28571428571445" y="204.99999999999994">WS1.Observers.Log</node>
+    <node x="592.7142857142856" y="47.99999999999994">WS1.StudentCode.RandomSupplier</node>
+    <node x="-308.03571428571445" y="-190.00000000000006">WS1.Observables.Observable</node>
+    <node x="364.46428571428555" y="-109.00000000000006">WS1.Observers.MSTempObserver</node>
+    <node x="168.71428571428555" y="47.99999999999994">WS1.Observables.AlarmClockRecord</node>
+    <node x="-514.2857142857144" y="128.99999999999994">WS1.Observables.SensorAlarmListener</node>
+    <node x="-210.5357142857145" y="-109.00000000000006">WS1.Observables.PressureTrendSensor</node>
+    <node x="-6.535714285714505" y="-109.00000000000006">WS1.Observers.MSPressObserver</node>
+    <node x="-288.2857142857145" y="-28.000000000000057">WS1.Observables.Nimbus1TemperatureSensor</node>
+    <node x="177.46428571428555" y="-109.00000000000006">WS1.Observers.LogPressObserver</node>
+    <node x="-514.2857142857144" y="204.99999999999994">WS1.StudentCode.MainClassWS1</node>
+    <node x="-492.78571428571445" y="47.99999999999994">WS1.Observables.AlarmListener</node>
+    <node x="-278.28571428571445" y="47.99999999999994">WS1.StudentCode.AlarmClock</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="WS1.Observers.LogPressObserver" target="WS1.Observers.Observer" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WS1.Observables.PressureTrendSensor" target="WS1.Observables.Observable" relationship="GENERALIZATION">
+      <point x="-46.0" y="-15.5" />
+      <point x="-164.5357142857145" y="-134.00000000000006" />
+      <point x="-232.53571428571445" y="-134.00000000000006" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WS1.Observables.PressureTrendSensor" target="WS1.Observers.Observer" relationship="REALIZATION">
+      <point x="46.0" y="-15.5" />
+      <point x="-72.5357142857145" y="-134.00000000000006" />
+      <point x="260.96428571428555" y="-134.00000000000006" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WS1.Observables.Sensor" target="WS1.Observables.Observable" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="-291.5357142857145" y="-134.00000000000006" />
+      <point x="-232.53571428571445" y="-134.00000000000006" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WS1.Observables.Nimbus1PressureSensor" target="WS1.Observables.Sensor" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="-411.28571428571445" y="-53.00000000000006" />
+      <point x="-291.5357142857145" y="-53.00000000000006" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WS1.Observables.Nimbus1TemperatureSensor" target="WS1.Observables.Sensor" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="-171.7857142857145" y="-53.00000000000006" />
+      <point x="-291.5357142857145" y="-53.00000000000006" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WS1.Observers.LogPressTrendObserver" target="WS1.Observers.Observer" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="652.9642857142856" y="-134.00000000000006" />
+      <point x="260.96428571428555" y="-134.00000000000006" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WS1.Observers.MSPressObserver" target="WS1.Observers.Observer" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="75.4642857142855" y="-134.00000000000006" />
+      <point x="260.96428571428555" y="-134.00000000000006" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WS1.Observables.SensorAlarmListener" target="WS1.Observables.AlarmListener" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WS1.Observers.MSTempObserver" target="WS1.Observers.Observer" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="447.96428571428555" y="-134.00000000000006" />
+      <point x="260.96428571428555" y="-134.00000000000006" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="WS1.StudentCode.Nimbus1Clock" target="WS1.StudentCode.AlarmClock" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6999999999999998" showDependencies="false" x="88.0" y="94.00000000000006" />
+  <SelectedNodes>
+    <node>WS1.Observables.Sensor</node>
+    <node>WS1.Observers.LogPressTrendObserver</node>
+    <node>WS1.Observers.MonitoringScreen</node>
+    <node>WS1.Observers.Trend</node>
+    <node>WS1.Observers.Observer</node>
+    <node>WS1.StudentCode.Nimbus1Clock</node>
+    <node>WS1.Observables.Nimbus1PressureSensor</node>
+    <node>WS1.Observables.WeatherMonitoringSystem</node>
+    <node>WS1.Observers.Log</node>
+    <node>WS1.StudentCode.RandomSupplier</node>
+    <node>WS1.Observables.Observable</node>
+    <node>WS1.Observers.MSTempObserver</node>
+    <node>WS1.Observables.AlarmClockRecord</node>
+    <node>WS1.Observables.SensorAlarmListener</node>
+    <node>WS1.Observables.PressureTrendSensor</node>
+    <node>WS1.Observers.MSPressObserver</node>
+    <node>WS1.Observables.Nimbus1TemperatureSensor</node>
+    <node>WS1.Observers.LogPressObserver</node>
+    <node>WS1.StudentCode.MainClassWS1</node>
+    <node>WS1.Observables.AlarmListener</node>
+    <node>WS1.StudentCode.AlarmClock</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

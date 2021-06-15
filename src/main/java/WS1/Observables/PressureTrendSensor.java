@@ -14,6 +14,7 @@ public class PressureTrendSensor extends Observable<Trend> implements Observer<I
     Trend lastState;
 
     public PressureTrendSensor(Nimbus1PressureSensor pressureSensor) {
+        System.out.println("PressureTrendSensor observes pressure");
         pressureSensor.addObserver(this);
         for (int i = 0; i < NUM_OF_ELEMENTS; i++)
             readingList.add(0);
@@ -26,7 +27,7 @@ public class PressureTrendSensor extends Observable<Trend> implements Observer<I
             for (int i = 0; i < NUM_OF_ELEMENTS - 1; i++) {
                 if (readingList.get(i) < readingList.get(i + 1))
                     falling = false;
-                if (readingList.get(i) < readingList.get(i + 1))
+                if (readingList.get(i) >= readingList.get(i + 1))
                     rising = false;
             }
             if (falling && !rising)

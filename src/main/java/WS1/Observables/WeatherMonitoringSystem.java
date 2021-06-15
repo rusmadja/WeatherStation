@@ -6,7 +6,7 @@ import WS1.StudentCode.AlarmClock;
 import WS1.StudentCode.Nimbus1Clock;
 /*@Singleton*/
 public class WeatherMonitoringSystem {
-    public Nimbus1TemperatureSensor nimbus1TemperatureSensor;
+    public Nimbus1TemepratureSensor nimbus1TemperatureSensor;
     public Nimbus1PressureSensor nimbus1PressureSensor;
     public PressureTrendSensor pressureTrendSensor;
     private static WeatherMonitoringSystem instance = null;
@@ -23,7 +23,7 @@ public class WeatherMonitoringSystem {
         AlarmClock alarmClock = Nimbus1Clock.theInstance();
 
         nimbus1PressureSensor = new Nimbus1PressureSensor("pressure",1100);
-        nimbus1TemperatureSensor = new Nimbus1TemperatureSensor("temperature",700);
+        nimbus1TemperatureSensor = new Nimbus1TemepratureSensor("temperature",700);
         pressureTrendSensor = new PressureTrendSensor(nimbus1PressureSensor);
     }
 
